@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 const LendingPage = () => {
@@ -9,12 +10,14 @@ const LendingPage = () => {
           return (
             // eslint-disable-next-line react/jsx-key
             <div className="masker overflow-hidden ">
-                <div className="w-fit flex items-center">
-                    {index ===1 && (<div className="w-[8vw] h-[5.7vw] mr-[1vw] rounded-lg bg-red-600 flex items-center "></div>)}
-                    <h1 className="uppercase text-[8vw]   font-['Gilroy'] leading-[7vw] font-bold ">
-                        {item}
-                    </h1>
+              <div className="w-fit flex items-center">
+                {index === 1 && (
+                  <motion.div initial={{width:0}} animate={{width:"9vw"}} transition={{ease:[0.76,0,0.24,1], duration:1}}  className="w-[9vw] bg-center h-[5.7vw] mr-[1vw] rounded-lg flex items-center bg-cover bg-[url('https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]"></motion.div>
+                )}
+                <div className="uppercase text-[8vw]   font-['Gilroy'] leading-[7vw] font-bold ">
+                  {item}
                 </div>
+              </div>
             </div>
           );
         })}
@@ -24,8 +27,8 @@ const LendingPage = () => {
           "for Public and private Companies",
           "From the first Pitch to IPO",
         ].map((item, index) => {
-            return (
-              // eslint-disable-next-line react/jsx-key
+          return (
+            // eslint-disable-next-line react/jsx-key
             <p className="text-md font-light tracking-tight leading-none">
               {item}
             </p>
